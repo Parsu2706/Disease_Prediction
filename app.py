@@ -146,15 +146,15 @@ if __name__ == "__main__":
             fig = px.bar(x = labels , y = probs , labels={'x' : 'Disease' , 'y': "Probability"} , title="Prediction Confidence")
             st.plotly_chart(fig , use_container_width=True)
 
-            if GEMINI_API_KEY: 
+             
                     
-                with st.spinner("AI is analyzing the clinical data..."): 
-                    analysis = gemini_analysis(st.session_state.selected_symptoms , labels[:3] , probs[:3],model_name='models/gemini-2.0-flash')
+            with st.spinner("AI is analyzing the clinical data..."): 
+                analysis = gemini_analysis(st.session_state.selected_symptoms , labels[:3] , probs[:3],model_name='models/gemini-2.0-flash')
 
-                    st.markdown("---")
-                    st.header("👨🏻‍⚕️ Clinial AI Insights")
-                    with st.container(border=True):
-                        st.markdown(analysis)
+                st.markdown("---")
+                st.header("👨🏻‍⚕️ Clinial AI Insights")
+                with st.container(border=True):
+                    st.markdown(analysis)
 
         
 
