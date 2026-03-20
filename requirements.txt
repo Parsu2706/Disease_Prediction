@@ -1,6 +1,8 @@
 streamlit
-torch 
-numpy 
-pandas 
+torch
+numpy
+pandas
 scikit-learn
-plotly 
+plotly
+python-dotenv
+google-genai
