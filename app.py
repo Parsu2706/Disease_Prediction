@@ -5,14 +5,8 @@ import numpy as np
 import pandas as pd
 import json
 import torch
-import os 
-from dotenv import load_dotenv
 from model import DiseasePrediction
 from Gemini_int import gemini_analysis
-
-
-load_dotenv()
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 
 @st.cache_resource
@@ -124,8 +118,7 @@ if __name__ == "__main__":
         st.write("")
         st.info(f"Selected Symptoms : {len(st.session_state.selected_symptoms)}")
         with st.container(border= True ):
-            st.write(f"Symptoms : {" ,".join(st.session_state.selected_symptoms)} ")
-
+            st.write(f"Symptoms : {', '.join(st.session_state.selected_symptoms)}")
     with tab2: 
         if st.button("Predict"): 
             if len(st.session_state.selected_symptoms) == 0 : 
